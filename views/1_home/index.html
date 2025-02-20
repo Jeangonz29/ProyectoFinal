@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Cargar Fuentes -->
+    <link rel="stylesheet" href="../fonts/fontawesome-free-6.1.2-web/css/all.min.css"> <!-- Iconos Biblioteca-->
+    <link rel="stylesheet" href="../fonts/dmsans/dmsans.css">  <!-- Esto es para la fuente de letra que esta descargada y tuve que hacer un style con un @font-face Pero estoy usando una de google font que import-->
+
+    <!--Cargar Estilos-->
+    <link rel="stylesheet" href="../css/reset.css"> <!--Reset por defecto-->
+    <link rel="stylesheet" href="../css/home.css">  <!--Css Home Principal-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!--Cargar script-->
+
+    <title>Develop AutomAccess</title>
+    
+</head>
+<body>
+    <div class="layout">
+
+        <!--OJOOO Recordar lo de la metodologia BEM que vi en youtube: bloque, elemento, modificador-->
+        <!--Ir por parte xd-->
+
+        <!--MENU---------------------------------------------------------------------------------------------------------------------------------------------------->
+        <section id="NAVEGACION"></section>
+
+
+        <!--BANNER o la pàrte grande que pondre------------------------------------------------------------------------------------------------------------------->
+        <section class="layout__banner">
+
+            <!--CONTENIDO DEL BANNER-->
+            <header class="banner__content">
+                <h1 class="banner__titulo">Control de acceso y asistencia <br>
+                <a href="#" class="banner__btn bg-blue-300">INICIA AQUI</a> <!--Referencia que mandara a otra pagina-->
+            </header>
+            <!--FORMAS E IMAGENES DEL BANNER-->
+            <div class="banner__formas">
+                <ul class="formas__list">
+                    <!--Esto esta para los efectos que vi en unas imagenes, que hare con css-->
+                    <li class="formas__item formas__item--formas1">
+                        <div class="formas__container">
+                            <img src="../img/banner-shape-1.png" class="formas__img">
+                        </div>
+                    </li>
+                    <li class="formas__item formas__item--formas2">
+                        <div class="formas__container">
+                            <img src="../img/banner-shape-2.png" class="formas__img">
+                        </div>
+                    </li>
+                    <li class="formas__item formas__item--formas3">
+                        <div class="formas__container">
+                            <img src="../img/bubble-16.png" class="formas__img">
+                        </div>
+                    </li>
+                    <li class="formas__item formas__item--formas4">
+                        <div class="formas__container">
+                            <img src="../img/bubble-15.png" class="formas__img">
+                        </div>
+                    </li>
+                    <li class="formas__item formas__item--formas5">
+                        <div class="formas__container">
+                            <img src="../img/bubble-14.png" class="formas__img">
+                        </div>
+                    </li>
+                    <li class="formas__item formas__item--formas6">
+                        <div class="formas__container">
+                            <img src="../img/bubble-16.png" class="formas__img">
+                        </div>
+                    </li>
+                    <li class="formas__item formas__item--formas7">
+                        <div class="formas__container">
+                            <img src="../img/bubble-26.png" class="formas__img">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!--SERVICIOS------------------------------------------------------------------------------------------------------------------------------------------------->
+        <section id="servicios" class="layout__servicios">
+
+            <div class="servicios__grid">
+
+                <header class="servicios__header">
+                    <p class="servicios__subtitulo">¿Sin saber que ofrecen nuestros servicios? <br> Aqui lo detallamos:</p>
+                    <h2 class="servicios__titulo">Servicios que te pueden dar bienestar. </h2>
+                </header>
+    
+                <div class="servicios__list">
+                    <article class="servicios__servicio servicios__servicio--abajo">
+                        <div class="servicio__container-img">
+                            <img src="../img/icon-1.png" alt="DISEÑO SERVICIOS" class="servicio__img">
+                        </div>
+                        <div class="servicio__content">
+                            <h3 class="servicio__titulo">
+                                <a href="#" class="servicio__link">Control de acceso.</a>
+                            </h3>
+                            <p class="servicio__description text-left"> 
+                                Proporciona a tus espacios un nivel adicional de seguridad al identificar a las personas con alta precisión. <br> Esto ayuda a prevenir el acceso no autorizado a áreas restringidas y protege información y activos sensibles.
+                            </p>
+    
+                        </div>
+                    </article>
+    
+                    <article class="servicios__servicio servicios__servicio--medio">
+                        <div class="servicio__container-img">
+                            <img src="../img/icon-2.png" alt="desarrollo" class="servicio__img">
+                        </div>
+                        <div class="servicio__content">
+                            <h3 class="servicio__titulo">
+                                <a href="#" class="servicio__link">Automatización de asistencias.</a>
+                            </h3>
+                            <p class="servicio__description"> 
+                                Recuerda que estos servicios reducen el error humano, proporcionando datos precisos y fiables sobre la asistencia. Esto asegura que la información registrada sea correcta y útil para análisis posteriores.
+                            </p>
+    
+                        </div>
+                    </article>
+    
+                    <article class="servicios__servicio servicios__servicio--arriba">
+                        <div class="servicio__container-img">
+                            <img src="../img/icon-3.png" alt="marketing" class="servicio__img">
+                        </div>
+                        <div class="servicio__content">
+                            <h3 class="servicio__titulo">
+                                <a href="#"  class="servicio__link">Gestion Administrativa.</a>
+                            </h3>
+                            <p class="servicio__description"> 
+                                Centraliza toda la información de asistencia en una sola plataforma, facilitando la administración de estos datos y garantizando que sean accesibles y organizados.
+                            </p>
+                            </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <!--proyectosS------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <section class="layout__proyectos" id="Trabajos__Hechos">
+            <div class="proyectos__grid">
+                <header class="proyectos__header">
+                    <p class="proyectos__subtitulo"></p>
+                    <h2 class="proyectos__titulo text-center text-6xl text-white">
+                        Algunos de nuestros mejores trabajos.
+                    </h2>
+                </header>
+                <!--ESTA PARTE LA COMENTARE, PORQUE MAS ADELANTE QUIERO AGREGAR UNOS SERVICIOS DIFERENTES
+                Y SERAN TIPO SELECCIONA UNA UNA Y LAS OTRAS SE OCULTAN
+                <ul class="proyectos__categorias">
+                    <li class="categorias__item categorias__item--ACTIVE">
+                        todos los trabajos
+                    </li>
+                    <li class="categorias__item">
+                        Desarrollo
+                    </li>
+                    <li class="categorias__item">
+                        Movil
+                    </li>
+                    <li class="categorias__item">
+                        diseño
+                    </li>
+                </ul>-->
+
+
+                <!--RECORDAR QUE TODAS IMAGENES DEBO CAMBIARLAS POR LAS QUE TENGO EN LA PC-->
+                <div class="proyectos__all">
+                    <article class="proyectos__proyecto">
+                        <div class="proyecto__container-img">
+                            <a href="#" class="proyecto__link-img">
+                                <img src="../img/project-6.jpg" class="proyecto__img" alt="Imagen de un proyecto">
+                            </a>
+                        </div>
+                        <div class="proyecto__content">
+                            <h3 class="proyecto__titulo">
+                                <a href="#" class="proyecto__link-titulo">
+                                    CONTROL DE ACCESO
+                                </a>
+                            </h3>
+                            <div class="proyecto__tags">
+                                <span class="proyecto__tags">Rapidez y Eficiencia,</span>
+                                <span class="proyecto__tags">Conveniencia,</span>
+
+                                <span class="proyecto__tags">Detección de Fraude.</span>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="proyectos__proyecto">
+                        <div class="proyecto__container-img">
+                            <a href="#" class="proyecto__link-img">
+                                <img src="../img/project-6.jpg" class="proyecto__img" alt="Imagen de un proyecto">
+                            </a>
+                        </div>
+                        <div class="proyecto__content">
+                            <h3 class="proyecto__titulo">
+                                <a href="#" class="proyecto__link-titulo">
+                                    CONTROL DE ASISTENCIA
+                                </a>
+                            </h3>
+                            <div class="proyecto__tags">
+                                <span class="proyecto__tags">Ahorro de Tiempo,</span>
+                                <span class="proyecto__tags">Generación de Informes,</span>
+
+                                <span class="proyecto__tags">Productividad.</span>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="proyectos__proyecto">
+                        <div class="proyecto__container-img">
+                            <a href="#" class="proyecto__link-img">
+                                <img src="../img/project-6.jpg" class="proyecto__img" alt="Imagen de un proyecto">
+                            </a>
+                        </div>
+                        <div class="proyecto__content">
+                            <h3 class="proyecto__titulo">
+                                <a href="#" class="proyecto__link-titulo">
+                                    GESTION ADMINISTRATIVA
+                                </a>
+                            </h3>
+                            <div class="proyecto__tags">
+                                <span class="proyecto__tags">Facilitación de Auditorías,</span>
+                                <span class="proyecto__tags">Reducción de Costos.</span>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="proyectos__proyecto">
+                        <div class="proyecto__container-img">
+                            <a href="#" class="proyecto__link-img">
+                                <img src="../img/project-6.jpg" class="proyecto__img" alt="Imagen de un proyecto">
+                            </a>
+                        </div>
+                        <div class="proyecto__content">
+                            <h3 class="proyecto__titulo">
+                                <a href="#" class="proyecto__link-titulo">
+                                    CONTROL DE ACCESOOOOOOOOOOOO
+                                </a>
+                            </h3>
+                            <div class="proyecto__tags">
+                                <span class="proyecto__tags">HOLA,</span>
+                                <span class="proyecto__tags">HOLA,</span>
+
+                                <span class="proyecto__tags">HOLA</span>
+
+                            </div>
+                        </div>
+                    </article>
+<!--
+                    <article class="proyectos__proyecto">
+                        <div class="proyecto__container-img">
+                            <a href="#" class="proyecto__link-img">
+                                <img src="../assets/img/project-5.jpg" class="proyecto__img" alt="Imagen de un proyecto">
+                            </a>
+                        </div>
+                        <div class="proyecto__content">
+                            <h3 class="proyecto__titulo">
+                                <a href="#" class="proyecto__link-titulo">
+                                    oooooooooooooooooooooo
+                                </a>
+                            </h3>
+                            <div class="proyecto__tags">
+                                <span class="proyecto__tags">ooooooooo,</span>
+                                <span class="proyecto__tags">ooooooooo,</span>
+
+                                <span class="proyecto__tags">oooooooooo</span>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="proyectos__proyecto">
+                        <div class="proyecto__container-img">
+                            <a href="#" class="proyecto__link-img">
+                                <img src="../assets/img/project-6.jpg" class="proyecto__img" alt="Imagen de un proyecto">
+                            </a>
+                        </div>
+                        <div class="proyecto__content">
+                            <h3 class="proyecto__titulo">
+                                <a href="#" class="proyecto__link-titulo">
+                                    oooooooooooooooooooo
+                                </a>
+                            </h3>
+                            <div class="proyecto__tags">
+                                <span class="proyecto__tags">oooooooooooo,</span>
+                                <span class="proyecto__tags">ooooooooooo,</span>
+
+                                <span class="proyecto__tags">ooooooooooooo</span>
+
+                            </div>
+                        </div>
+                    </article>
+-->
+                </div>
+            </div>
+        </section>
+
+
+        <!--ESTADISTICAS   -------------------------------------------------------------------------------------------------------------------------------------------------->
+        <section class="layout__stats">
+            <div class="stats__container">
+                <header class="stats__header">
+                    <h4 class="stats__subtitulo">Agencia de desarrollo</h4>
+                    <h2 class="stats__titulo">Estadisticas de trabajos realizados</h2>
+                    <p class="stats__description">
+                        Aqui podras ver un peuqeño y puedes ver un resumen en estos años de trabajos
+                    </p>
+                </header>
+                <div class="stats__progreso">
+                    <article class="stats__stat">
+                        <div class="stat__icon">
+                            <img src="../img/icon-7.png" class="stat__img">
+                        </div>
+                        <span class="stat__content">+15</span>
+
+                        <h6 class="stat__titulo">
+                            años activo
+                        </h6>
+                    </article>
+
+                    <article class="stats__stat">
+                        <div class="stat__icon">
+                            <img src="../img/icon-8.png" class="stat__img">
+                        </div>
+                        <span class="stat__content">+200</span>
+
+                        <h6 class="stat__titulo">
+                        Proyectos realizados
+                        </h6>
+                    </article>
+
+                    <article class="stats__stat">
+                        <div class="stat__icon">
+                            <img src="../img/icon-9.png" class="stat__img">
+                        </div>
+                        <span class="stat__content">+165</span>
+
+                        <h6 class="stat__titulo">
+                            clientes
+                        </h6>
+                    </article>
+
+                    <article class="stats__stat">
+                        <div class="stat__icon">
+                            <img src="../img/apple.png" class="stat__img">
+                        </div>
+                        <span class="stat__content">+150</span>
+
+                        <h6 class="stat__titulo">
+                            clientes copntentos
+                        </h6>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <!--RESEÑAS ----------------------------------------------------------------  ---------------------------------------------------------------------------------------->
+        <section class="layout__reviews">
+            <div class="reviews__grid">
+                <header class="reviews__header">
+                    <h4 class="reviews__subtitulo">Reseñas</h4>
+                    <h2 class="reviews__titulo">¿Que dicen nuestros clientes?</h2>
+                    <p class="reviews__description">OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+                    </p>
+                </header>
+
+                <div class="reviews__container">
+                    <article class="reviews__review">
+                        <span class="review__company">
+                            <img src="../img/google-2.png" class="review__img">
+                        </span>
+    
+                        <p class="review__description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum alias aperiam iure similique. Unde, soluta! Dolores tempore libero eius quod illo maxime provident, optio modi numquam odit, vero labore eaque!
+                        </p>
+    
+                        <div class="review__autor">
+                            <div class="autor__container-img">
+                                <img src="../img/google-2.png"  class="autor__img" alt="Foto de usuario">
+    
+                            </div>
+                            <div class="autor__content">
+                                <span class="autor__name">JEAN FREIDER</span>
+                                <span class="autor__description">DESARROLLADOR</span>
+    
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reviews__review">
+                        <span class="review__company">
+                            <img src="../img/google-2.png" class="review__img">
+                        </span>
+    
+                        <p class="review__description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium minima voluptas eos vero sequi asperiores et, vel cum explicabo. Perspiciatis molestias placeat tempore voluptate repudiandae, ducimus voluptates quo quisquam ex.
+                        </p>
+    
+                        <div class="review__autor">
+                            <div class="autor__container-img">
+                                <img src="../img/google-2.png"  class="autor__img" alt="Foto de usuario">
+    
+                            </div>
+                            <div class="autor__content">
+                                <span class="autor__name">JEAN FREIDER</span>
+                                <span class="autor__description">DESARROLLADOR</span>
+    
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reviews__review">
+                        <span class="review__company">
+                            <img src="../img/youtube.png" class="review__img">
+                        </span>
+    
+                        <p class="review__description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae excepturi tempora earum sunt, doloremque veniam ab laborum voluptates alias quae, officiis magnam maxime quisquam iusto? Perspiciatis tempore nesciunt culpa quos.
+                        </p>
+    
+                        <div class="review__autor">
+                            <div class="autor__container-img">
+                                <img src="../img/google-2.png"  class="autor__img" alt="Foto de usuario">
+    
+                            </div>
+                            <div class="autor__content">
+                                <span class="autor__name">JEAN FREIDER</span>
+                                <span class="autor__description">DESARROLLADOR</span>
+    
+                            </div>
+                        </div>
+                    </article>
+                </div>
+               
+            </div>
+
+
+        </section>
+
+
+        <!--CLIENTES  -------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <section id="equipo" class="layout__clientes">
+            <div class="clientes__container">
+                <header class="clientes__header">
+                    <h4 class="clientes__subtitulo">Mejores clientes</h4>
+                    <h2 class="clientes__titulo">Hemos creado soluciones para...</h2>
+                    <p class="clientes__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+
+                </header>
+                <div class="clientes__logos">
+                    <article class="clientes__item">
+                        <img src="../img/brand-1.png" class="clientes__img" >
+                        <img src="../img/brand-1.png" class="clientes__img" >
+                        <img src="../img/brand-1.png" class="clientes__img" >
+                        <img src="../img/brand-1.png" class="clientes__img" >
+
+                    </article>
+                </div>
+            </div>
+
+            <ul class="clientes__cleinte-formas">
+                <li class="cliente-formas__item cliente-formas--formas3">
+                    <div class="cliente-formas__container">
+                        <img src="../img/line-9.png" class="cliente-formas__img">
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+
+        <!--NOTICIAS   ----------------------------------------------------------------------------------------------------------------------------------------------------->
+        <section class="layout__news">
+            <div class="news__container">
+                <header class="news__header">
+                    <h4 class="news__subtitulo">¿Que esta pasando?</h4>
+                    <h2 class="news__titulo">Ultimas noticias</h2>
+                    <p class="news__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis reiciendis fuga corrupti dignissimos a ducimus sequi minus blanditiis, vitae ad tempore qui aspernatur quos amet aliquid veritatis laboriosam repellat?
+                    </p>
+                </header>
+
+                <div class="news__list">
+                    <article class="news__new">
+                        <div class="new__container-img">
+                            <img src="../img/story-1.jpg" alt="" class="new__img">
+                        </div>
+                        <div class="new__content">
+                            <h3 class="new__titulo">
+                                <a href="#" class="new__link">Lorem ipsum dolor sit amet consectetur adipisicing elit. ?</a>
+                            </h3>
+                            <p class="new__description">em ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            <a href="#" class="new__mas">Leer mas
+                                <i class="fa-solid fa-chevron-right new__icon"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news__new">
+                        <div class="new__container-img">
+                            <img src="../img/story-2.jpg.jpg" alt="" class="new__img">
+                        </div>
+                        <div class="new__content">
+                            <h3 class="new__titulo">
+                                <a href="#" class="new__link"> em ipsum dolor sit amet consectetur adipisicing elit. </a>
+                            </h3>
+                            <p class="new__description">Qem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            <a href="#" class="new__mas">Leer mas
+                                <i class="fa-solid fa-chevron-right new__icon"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <ul class="news__new-formas">
+                <li class="new-formas__item new-formas--formas3">
+                    <div class="new-formas__container">
+                        <img src="../img/bubble-1.png" class="new-formas__img">
+                    </div>
+                </li>
+
+                <li class="new-formas__item new-formas--formas3">
+                    <div class="new-formas__container">
+                        <img src="../img/line-1.png" class="new-formas__img">
+                    </div>
+                </li>
+
+                <li class="new-formas__item new-formas--formas3">
+                    <div class="new-formas__container">
+                        <img src="../img/line-2.png.png" class="new-formas__img">
+                    </div>
+                </li>
+
+                <li class="new-formas__item new-formas--formas3">
+                    <div class="new-formas__container">
+                        <img src="../img/bubble-2.png.png" class="new-formas__img">
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!--CONTACTO   ------------------------------------------------------------------------------------>
+        <section id="contacto" class="layout__contacto">
+            <div class="contacto__container">
+                <header class="contacto__header">
+                    <h4 class="contacto__subtitulo">trabajemos juntos</h4>
+                    <h2 class="contacto__titulo">Reforzamos tu seguridad</h2>
+                    <a href="#" class="contacto__btn">pedir presupuesto</a>
+                </header>
+
+            <div class="contacto__img">
+                <div class="contacto__thumb">
+                    <img src="../img/chat-group.png" alt="" class="contacto__img">
+                </div>
+
+                <div class="contacto"> 
+                
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!--FOOTER   --------------------------------------------------------------------------------------------->
+
+
+
+
+
+    </div>
+    
+
+    <script src="../components/nav.js"></script>
+</body>
+</html>

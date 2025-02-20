@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Cargar Fuentes -->
+    <link rel="stylesheet" href="../fonts/fontawesome-free-6.1.2-web/css/all.min.css">  <!--Iconos Biblioteca-->
+    <link rel="stylesheet" href="../fonts/dmsans/dmsans.css">  <!--Esto es para la fuente de letra que esta descargada y tuve que hacer un style con un @font-face Pero estoy usando una de google font que import-->
+
+    <!--Cargar Estilos-->
+    <link rel="stylesheet" href="../css/reset.css"> <!--Reset por defecto-->
+    <link rel="stylesheet" href="../css/BarraNavegacion.css">
+    <link rel="stylesheet" href="../css/Login__Registro.css">  <!--Css Home Principal-->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--Cargar JS-->
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Registro</title>
+    
+</head>
+<body>
+
+    <!--MENU----------------------------------------------------------------------------------------------->
+    <section id="NAVEGACION"></section>
+
+    
+    <div id="notificacion" class="fixed top-20 left-0 right-0 text-center justify-center"></div>
+    
+    <section class="ContainerFormulario">
+        <div class="ContainerContenido">
+            <form id="formulario" class="Formulario">
+                <h2 class="Titulo">REGISTRATE AQUÍ</h2>
+                <div class="Labelinput">
+                    <label for="name-input">
+                    </label>
+                    <input type="text" id="name-input" autocomplete="off" placeholder="(Ej.) Nombre: Jean Freider"
+                    class="rounded-lg p-2 focus:outline-blue-600" required>
+                </div>
+    
+                <div class="Labelinput">
+                    <label for="email-input">
+                    </label>
+                    <input type="email" id="email-input" autocomplete="off" placeholder="(Ej.) jean1234@gmail.com"
+                    class="rounded-lg p-2 focus:outline-blue-600" required>
+                </div>
+ <!--
+                <div class="">
+                    <p>Ingresa tu rol:</p>
+                    <select name="Roles" id="roles" class="bg-blue-500 text-black border-2 p-1 mt-2 ">
+                        <option value="adminitrador">Administración</option>
+                        <option value="seguridad">Seguridad</option>
+                        <option value="RRHH">Recursos Humanos</option>
+                    </select>
+                </div>-->
+            
+    
+                <div class="Labelinput">
+                    <label for="password-input">
+                    </label>
+                    <input type="password" id="password-input" autocomplete="off" placeholder="Contraseña" 
+                    class="rounded-lg p-2 focus:outline-blue-600" required>
+                </div>
+    
+                <div class="Labelinput">
+                    <label for="match-input">
+                    </label>
+                    <input type="password" id="match-input" 
+                    placeholder="Confirmar Contraseña"
+                    class="rounded-lg p-2 focus:outline-blue-600" required>
+                </div>
+
+                <button type="submit" id="form-btn" disabled class="bg-blue-400 px-4 rounded-lg hover:bg-blue-700 py-2 transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+                    Registrar
+                </button>
+            </form>
+        </div>
+
+    </section>
+
+    <div class="introduccion">
+        <h3 class="text-amber-300">IMPORTANTE:</h3>
+        <p>LOS CAMPOS SON OBLIGATORIOS<span class="text-red-500">***</span><br>
+        LA CONTRASEÑA DEBE TENER AL MENOS UN CARACTER MAYUSCULA, UNO MINUSCULA, DEBE TENER ENTRE 8 Y 16 CARACTERES, DEBE TENER AL MENOS UN CARACTER ESPECIAL
+        </p>
+    </div>
+
+
+    <script type="module" src="registro.js"></script>
+    <script src="../components/nav.js"></script>
+    <script type="module" src="../components/notificaciones.js"></script>
+    <!--Para exportarlo se usa el type:"module"-->
+</body>
+</html>

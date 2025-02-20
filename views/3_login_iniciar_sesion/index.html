@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Cargar Fuentes -->
+    <link rel="stylesheet" href="../fonts/fontawesome-free-6.1.2-web/css/all.min.css">  <!--Iconos Biblioteca-->
+    <link rel="stylesheet" href="../fonts/dmsans/dmsans.css">  <!--Esto es para la fuente de letra que esta descargada y tuve que hacer un style con un @font-face Pero estoy usando una de google font que import-->
+
+    <!--Cargar Estilos-->
+    <link rel="stylesheet" href="../css/reset.css"> <!--Reset por defecto-->
+    <link rel="stylesheet" href="../css/BarraNavegacion.css">
+    <link rel="stylesheet" href="../css/login_iniciar.css">  <!--Css Home Principal-->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!--Cargar JS-->
+
+    <title>Iniciar sesion</title>
+    
+</head>
+<body>
+
+        <!--OJOOO Recordar lo de la metodologia BEM que vi en youtube: bloque, elemento, modificador-->
+        <!--Ir por parte xd-->
+
+        <!--MENU----------------------------------------------------------------------------------------------->
+        <section id="NAVEGACION"></section>
+
+        <section class="ContainerFormulario">
+            <div class="ContainerContenido">
+                <form id="formulario" class="Formulario">
+                    <h2 class="Titulo">Bienvenido</h2>
+        
+                    <div class="Labelinput">
+                        <label for="email-input">
+                        </label>
+                        <input type="email" id="email-input" autocomplete="off" placeholder="(Ej.) jean1234@gmail.com"
+                        class="rounded-lg p-2 focus:outline-blue-600" required>
+                    </div>
+        
+                    <div class="Labelinput">
+                        <label for="password-input">
+                        </label>
+                        <input type="password" id="password-input" autocomplete="off" placeholder="Contraseña" 
+                        class="rounded-lg p-2 focus:outline-blue-600" required>
+                    </div>
+        
+                    <!-- <div class="Labelinput">
+                        <label for="match-input">
+                        </label>
+                        <input type="password" id="match-input" 
+                        placeholder="Confirmar Contraseña"
+                        class="rounded-lg p-2 focus:outline-blue-600" required>
+                    </div> -->
+                    <div class="olvidar">
+                        <label for="Recordar">
+                            <input type="checkbox" id="Recordar">
+                            <p>Recordarme</p>
+                        </label>
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+        
+                    <button type="submit" id="form-btn"  class="bg-blue-400 px-4 rounded-lg hover:bg-blue-700 py-2 transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+                        Iniciar Sesión
+                    </button>
+                    <div class="EnlaceRegistro">
+                        ¿Desea registrarse?
+                        <a href="/registro">Registrate aqui</a>
+                    </div>
+                </form>
+            </div>
+    
+        </section>
+     
+
+    
+
+
+
+    <script src="../components/nav.js"></script>
+    <script src="login.js"></script>
+    
+</body>
+</html>

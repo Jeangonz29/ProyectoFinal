@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/*Variables---------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------*/
+:root{
+    --mx-width: 1320px;
+    --color-text-body: #525260;
+    --color-primario: #5956E9;
+    --color-secundario: #fff;
+    --color-banner: #2522BA;
+    --color-text-btn: #0d6efd;
+    --color-bg-btn: #ffdc60;
+
+    --color-fondo-TODO: rgba(25, 120, 111, 0.395);
+    --color__Negro: black;
+
+    --color-subtitulo-servicios: #C75c6f;
+    --color-titulo-servicios: #292930;
+    --color-Fondo-Servicio: #f8f8f;
+
+    --color-fondo-proyecto: rgba(18, 74, 88, 0.243);
+
+}
+
+
+/*Estilos generales--------------------------------------------------------------------------
+------------------------------------------------------------------------------------------*/
+html{
+    font-size: 10px; /*1rem = 10 px*/
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-fondo-TODO);
+    font-size: 1.6rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-text-body);
+
+}
+
+
+/*Estilos MENU NAVEGACION Y CABECERA------------------------------------------------------
+-------------------------------------------------------------------------------------------*/
+.layout__menu{
+    width: 100%;
+    padding: 2rem 3rem;
+}
+
+.menu__navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__logo{
+    width: 187px; /*Aqui le puse una medida exacta para que no varie*/
+}
+
+.nav__titulo{
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    color: var(--color-secundario);
+    line-height: 6rem;
+    transition: all 300ms ease-in-out; /*transition no sera linear*/
+    padding: 0 1rem 0 1rem;
+}
+
+.nav__icon{
+    font-size: 1rem;
+    font-weight: bold;
+    padding-left: 0.2rem;
+    vertical-align: middle; /*esto es para alinear verticalmente el contenido en relación con su elemento contenedor*/
+}
+
+.nav__titulo:hover{
+    color: var(--color-primario);
+}
+/*Estetico la barra que quiero al hacer hover, twitter midu*/
+.nav__titulo::before{
+    content: "";
+    height: 0.2rem;
+    width: 0; /*Si lo pogno en 100 se marca, si lo quito desaparece*/
+    background-color: var(--color-primario);
+    position: absolute; /*Para posicionarlo donde yo quiera*/
+    bottom: 1.2rem; /*Esto es para que la linea del hover no m,e tache el texto*/
+    left: 0;
+    opacity: 0;
+    transition: 400ms;
+}
+.nav__titulo:hover::before{
+    width: 100%;
+    opacity: 1; /*Por esta razon arriba se puso en cero para que cuando haga hover*/
+}

@@ -1,0 +1,721 @@
+@import "tailwindcss";
+/*Variables---------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------*/
+:root{
+    --mx-width: 1320px;
+    --color-text-body: #525260;
+    --color-primario: #5956E9;
+    --color-secundario: #fff;
+    --color-banner: #2522BA;
+    --color-text-btn: #0d6efd;
+    --color-bg-btn: #ffdc60;
+
+    --color-fondo-TODO: rgba(25, 120, 111, 0.395);
+    --color__Negro: black;
+
+    --color-subtitulo-servicios: #C75c6f;
+    --color-titulo-servicios: #292930;
+    --color-Fondo-Servicio: #f8f8f;
+
+    --color-fondo-proyecto: rgba(18, 74, 88, 0.243);
+
+}
+
+
+/*Estilos generales--------------------------------------------------------------------------
+------------------------------------------------------------------------------------------*/
+html{
+    font-size: 10px; /*1rem = 10 px*/
+    overflow-x: hidden;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-fondo-TODO);
+    font-size: 1.6rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-text-body);
+
+}
+
+/*ESTRUCTURA------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------*/
+
+.layout{
+    width: 100%;
+    min-width: 1200px;
+    height: 100%; 
+}
+
+
+
+/*Estilos MENU NAVEGACION Y CABECERA------------------------------------------------------
+-------------------------------------------------------------------------------------------*/
+.layout__menu{
+    width: 100%;
+    padding: 2rem 3rem;
+}
+
+.menu__navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__logo{
+    width: 187px; /*Aqui le puse una medida exacta para que no varie*/
+}
+
+.nav__lista{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  
+}
+.nav__item{
+    position: relative; /*Para poder trabajar con after y before mas adelante*/
+   margin: 0 2.4rem;
+}
+
+.nav__titulo{
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    color: var(--color-text-body);
+    line-height: 6rem;
+    transition: all 300ms ease-in-out; /*transition no sera linear*/
+}
+
+.nav__icon{
+    font-size: 1rem;
+    font-weight: bold;
+    padding-left: 0.2rem;
+    vertical-align: middle; /*esto es para alinear verticalmente el contenido en relación con su elemento contenedor*/
+}
+
+.nav__titulo:hover{
+    color: var(--color-primario);
+}
+/*Estetico la barra que quiero al hacer hover, twitter midu*/
+.nav__titulo::before{
+    content: "";
+    height: 0.2rem;
+    width: 0; /*Si lo pogno en 100 se marca, si lo quito desaparece*/
+    background-color: var(--color-primario);
+    position: absolute; /*Para posicionarlo donde yo quiera*/
+    bottom: 1.2rem; /*Esto es para que la linea del hover no m,e tache el texto*/
+    left: 0;
+    opacity: 0;
+    transition: 400ms;
+}
+.nav__titulo:hover::before{
+    width: 100%;
+    opacity: 1; /*Por esta razon arriba se puso en cero para que cuando haga hover*/
+}
+
+/*Ahora los menu seran desplegables y con la animacion del reels*/
+
+.nav__submenu{
+    display: block;
+    position: absolute; /*Necesito que este por encima de todo y moverlo como quiero*/
+    top: 100%;
+    left: 2rem;
+    min-width: 19rem;
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-primario);
+    background-color: rgb(211, 217, 219);
+    box-shadow: 0 13px 20px 0 rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease-in-out;
+    
+    
+}
+
+.submenu__item{
+    opacity: 0;
+    transform: translateX(2rem); /*Esto es para desplazarlos*/
+    transition: all .10s ease-in-out;
+}
+.submenu__item:nth-child(1){
+    /*Esto porque sino tenemos quie poner una clase a cada submenu
+    seleccionar el primer hijo de un elemento padre. El número dentro de los paréntesis indica la posición del hijo en el orden de los elementos.*/
+    transition-delay: 100ms; /*especifica el tiempo de espera antes de que comience la transición de un elemento.*/
+}
+.submenu__item:nth-child(2){
+    transition-delay: 200ms;
+}
+.submenu__item:nth-child(3){
+     transition-delay: 300ms;
+}
+.submenu__item:nth-child(4){
+     transition-delay: 400ms;
+}
+.submenu__item:nth-child(5){
+    transition-delay: 500ms;
+}
+.submenu__item:nth-child(6){
+    transition-delay: 600ms;
+}
+
+
+.submenu__titulo{
+    display: block;
+    position: relative;
+    font-size: 1.4rem;
+    text-transform: capitalize; /*convertir la primera letra de cada palabra de un elemento en mayúscula*/
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--color-text-body);
+    padding: 0.7rem 1.5rem;
+    transition: all 300ms ease-in-out;
+}
+.nav__item:hover>.nav__submenu{
+    /*es una regla de CSS que aplica estilos a un elemento
+     cuando ocurre un evento de "hover" sobre un elemento padre y el evento va al hijo con el >*/
+    opacity: 1;
+    visibility: visible; /*Aqui tengo que jugar con la visibilidad y el opacity para que se marque*/
+    z-index: 999;
+    left: 0;
+}
+
+/*Ahora el estilo sobre los subtitulos que van dentro del menu*/
+.nav__item:hover .submenu__item{
+    opacity: 1; /*Aqui ap`lica lo mismo del opacity, arriba cero, abajo 1 para que efectue*/
+    transform: translateX(0);
+}
+
+.submenu__titulo:hover{
+    color: var(--color-primario);
+}
+
+.submenu__titulo::after{
+    content: "";
+    height: 0.1rem;
+    width: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: all 300ms ease-in-out;
+    background-color: var(--color-primario);
+
+}
+.submenu__titulo:hover::after{
+    width: 100%;
+}
+
+
+
+/* ESTILOS BANNER QUE ES L PARTE CENTRAL DE LA PANTALLA ----------------------------------------
+------------------------------------------------------------------------------------------*/
+
+.layout__banner{
+    position: relative; /*Esto es para manejar todos los efectos*/
+    min-height: 60rem;
+    margin: 0 3rem;
+    padding: 15rem 0 20rem 10rem;
+    border-radius: 6rem;
+    box-shadow: 0 0 10px black;
+    overflow: hidden;
+    background-color: var(--color-banner);
+    background-image: url(../img/fondo-ULTIMA.jpg);
+    background-size:contain;
+    background-repeat:round;
+    z-index: 1; /*Esto es para que las imagenes de abajo se puedan ver*/
+}
+.banner__content{
+    position: relative;
+    display: inline-block; /*Elemnto en linea*/
+    width: 50%;
+    padding: 0 1.5rem;
+    z-index: 3; /*Este no estaba funcionando al no tener un position relative
+    tener en cuenta que z-index es para elemnto en position absoluta o relativas*/
+}
+
+.banner__titulo{
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-secundario);
+    margin-bottom: 3rem;
+/*Animacion*/
+animation-name: Title; 
+animation-duration: 3s; 
+}
+@keyframes Title{
+0%{
+   transform: translateX(80%);
+
+}
+100%{
+   transform: translateX(0%);
+
+}
+}
+/*BTN QUE CAMBIARE POR EL DE MIDU*/
+.banner__btn{
+    display: inline-block; /*Me permita aplicarle y que se mantenga en su sitio*/
+    padding: 2.8rem 4.5rem;
+    background-color: var(--color-secundario);
+    color: var(--color-text-btn);
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 20px;/*Cuando le pongo px recuerda qu esta para que quede fijo OJO AQUI JEAN XD*/
+    box-shadow: 0 5px 6px -2px var(--color-primario);
+    transition: all 200ms ease-in-out; /*Recuerda que esto es para que la transition del hover*/
+
+     /*Animacion*/
+     animation-name: Btn; 
+     animation-duration: 3s; 
+}
+@keyframes Btn{
+    0%{
+        transform: translateX(100%);
+
+    }
+    100%{
+        transform: translateX(0%);
+
+    }
+}
+
+
+.banner__btn:hover{
+    background-color: var(--color-bg-btn);
+    color: var(--color-primario);
+}
+
+/*ESTO AQUI AHORA ES LA PÀRTE DE LAS FORMAS DE IMAGENES QUE ESTA EN CODEPEN
+en este aprendi a usar el z-index*/
+.formas__item{
+    position: absolute;
+    z-index: 2;
+    pointer-events: none; /*Para no darle click a cada imagen*/
+}
+.formas__item--formas1{
+    opacity: 0.6;
+    text-align: right;
+    top: 0;
+    right: 0;
+    filter: hue-rotate(250deg);/* Cambia el color, cambiando el valor*/
+
+    /*Animacion*/
+    animation-name: SalRigh; /*mostrar algo desde la derecha*/
+    animation-duration: 2s; /*Para hacer esto, debo meter un @keyframes*/
+}
+@keyframes SalRigh{
+    0%{
+        transform: translateX(50%);
+
+    }
+    100%{
+        transform: translateX(0%);
+
+    }
+}
+
+.formas__item--formas2{
+    opacity: 0.6;
+
+    bottom: 0;
+    left: 0;
+    /*Animacion*/
+    animation-name: SalLeft; 
+    animation-duration: 2s; 
+}
+@keyframes SalLeft{
+    0%{
+    transform: translateX(-50%);
+
+    }
+    100%{
+    transform: translateX(0%);
+
+    }
+}
+
+
+.formas__item--formas3{
+    top: 34%;
+    left: 50%;
+    /*En esta animacion estara en movimiento por completo*/
+    animation: moveForms3 20s infinite;
+}
+@keyframes moveForms3{
+    0%{
+    transform: translateX(0) translateY(0); /*Esto es para que la animacion sera natural*/
+    }
+    40%{
+        transform: translateX(-30px) translateY(-250px); 
+    }
+    75%{
+        transform: translateX(900px) ; 
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
+}
+
+
+
+.formas__item--formas4{
+    bottom: 24rem;
+    left: 45%;
+/*En esta animacion estara en movimiento por completo*/
+animation: moveForms4 25s infinite; 
+}
+@keyframes moveForms4{
+    0%{
+    transform: translateX(0) translateY(0); /*Esto es para que la animacion sera natural*/
+    }
+    40%{
+        transform: translateX(-50px) translateY(400px); 
+    }
+    75%{
+        transform: translateX(-700px) ; 
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
+}
+
+.formas__item--formas4 .formas__img{
+    opacity: 0.5;
+    width: 7.5rem;
+}
+
+.formas__item--formas5{
+    bottom: 12rem;
+    left: 55%;
+    opacity: 0.7;
+/*En esta animacion estara en movimiento por completo*/
+animation: moveForms5 30s infinite;
+}
+@keyframes moveForms5{
+    0%{
+        transform: translateX(0) translateY(0); /*Esto es para que la animacion sera natural*/
+        }
+        40%{
+            transform: translateY(-300%)
+        }
+        75%{
+            transform: translateX(-600px) translateY(-600px);
+        }
+        100%{
+            transform: translateX(0) translateY(0);
+        }
+}
+
+.formas__item--formas6{
+    bottom: 10rem;
+    left: 35%;
+    /*Animacion*/
+    animation: moveForms6 15s infinite;
+}
+
+@keyframes moveForms6{
+    0%{
+    transform: translateX(0) translateY(0); /*Esto es para que la animacion sera natural*/
+    }
+    40%{
+        transform: translateX(-30px) translateY(-250px); 
+    }
+    75%{
+        transform: translateX(900px) ; 
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
+}
+.formas__item--formas7{
+    opacity: 0.6;
+
+    top: 0;
+    right: 10rem;
+    z-index: 1;
+    
+    /*Animacion*/
+    animation: SalTOP 4s;
+}
+@keyframes SalTOP{
+    0%{
+    transform: translateY(-50%);
+
+    }
+    100%{
+    transform: translateY(0%);
+
+    }
+}
+/*Lo hice en cada una de ellas abajo*/
+/*Aqui animaremos los elementos que se muevan, revisar copeden la otra de las animaciones con css*/
+
+
+/* ESTILOS PARA LA PARTE DE SERVICIOS -----------------------------------------------------
+------------------------------------------------------------------------------------------*/
+.layout__servicios{
+    margin: 5rem 4rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.servicios__grid{
+    max-width: var(--mx-width);
+    margin: 0 auto;
+    
+}
+
+.servicios__header{
+    margin-bottom: -10px;
+    text-align: left;
+}
+.proyectos__subtitulo,
+.servicios__subtitulo{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-subtitulo-servicios);
+    margin-bottom: 0;
+}
+.proyectos__titulo,
+.servicios__titulo{
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.7;
+
+    color: var(--color-titulo-servicios);
+}
+
+.servicios__list{
+    display: flex; /*Es para distriubir bien los espacios y se pongan una al lado del otro*/
+    flex-direction: row;
+    gap: 2rem; /*Esta es opr si le quito el margin abajo y tengo separacion desde su elemento padre*/
+
+}
+.servicios__servicio{
+    width: 33%;
+    height: 100%;
+    padding: 5rem 4rem;
+    margin-bottom: 4rem;
+   
+    background: linear-gradient(356deg, #f8f8f8, rgba(255, 255, 255, 0));
+    background-color: rgba(50, 9, 95, 0.366);
+    
+    border-radius: 3rem;
+    /*border: 1px solid; Me gusta sin el border*/
+    /*border-image-source:  linear-gradient(356deg, #f8f8f8, rgba(255, 255, 255, 0));; /*Esto lo que hace es colocar un border con el mismo degradado*/
+    transition: all 700ms ease-in-out;
+    
+    display: flex;
+    flex-direction: row;
+  /*Animacion*/
+  animation: SalTOP-Caja 1s;
+}
+@keyframes SalTOP-Caja{
+    0%{
+    transform: translateX(-50%);
+
+    }
+    100%{
+    transform: translateY(0%);
+
+    }
+}
+
+.servicios__servicio:hover{
+    background-color: var(--color-Fondo-Servicio);
+    /*transform: scale(1.1); /* tamaño */
+    box-shadow: 0 5px 6px -2px var(--color-text-body);
+}
+.servicio__container-img{
+    margin-right: 2.4rem;
+    max-width: 8.5rem;
+    flex: 1;
+}
+
+/*Flex: 1   esto hace que tomen un espacio equitativo
+y esto incluye mucho flex*/
+.servicio__content{
+    flex: 1;
+}
+
+.servicio__titulo{
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 3rem;
+    color: var(--color-titulo-servicios);
+}
+
+.servicio__description{
+    font-size: 1.7rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+}
+
+
+/*ESCALONADO DE LAS TARJETAS DE SERVICIOS*/
+.servicios__servicio--abajo{
+    margin-top: 20rem;
+}
+
+.servicios__servicio--medio{
+    margin-top: 10rem;
+}
+
+.servicios__servicio--arriba{
+    margin-top: 0rem;
+}
+
+
+/*ESTA ES LA PARTE DE LOS PROYECTOS --------------------------------------------------------------
+-----------------------------------------------------------------------------------------*/
+.layout__proyectos{
+    position: relative;
+    
+    background-color: rgba(73, 42, 107, 0.366);
+    padding: 7rem 11rem;
+    z-index: 1;
+}
+
+.proyectos__grid{
+    max-width: var(--mx-width);
+    margin: 0 auto;
+}
+
+.proyectos__header{
+    margin-bottom: 4rem;
+}
+.proyectos__subtitulo{
+    text-transform: capitalize;
+}
+
+.proyectos__categorias{
+    display: flex;
+    flex-direction: row;
+    gap: 7rem;
+    margin-bottom: 5.5rem;
+}
+
+/*AQUI ESTAMOS HACIENDO LA PARTE DEL CONTENIDO DE LAS CAJSS DONDE PONDRE UNAS IMAGENES
+.categorias__item{
+    position: relative;
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.8rem 0;
+    transition: all 300ms ease in nout;
+}
+
+.categorias__item--ACTIVE,
+.categorias__item{
+    border-bottom:3px solid var(--color-primario);
+}*/
+
+.proyectos__all{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4rem 7rem;
+
+}
+
+.proyecto__container-img{
+    width: 100%;
+    border-radius: 40px 40px 0 0;
+    overflow: hidden;
+}
+.proyecto__img{
+ width: 100%;
+ transition: all 600ms ease-in-out;
+
+}
+
+.proyectos__proyecto:hover .proyecto__img{
+    transform: scale(1.2); /* tamaño */
+}
+
+.proyecto__content{
+    background-color: var(--color-secundario);
+    padding: 4rem 5rem;
+
+    border-radius: 0 0 40px 40px;
+}
+.proyecto__titulo{
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--color-titulo-servicios);
+    margin-bottom: 1rem;
+    transition: all 300ms ease-in-out;
+}
+.proyecto__titulo:hover{
+    color: var(--color-banner);
+}
+.proyecto__tags{
+    font-size: 1.6rem;
+
+}
+
+
+/*AQUI VIENE LA OTRA PARTE ESTADISTICAS --------------------------------------------------------------
+--------------.................................................................................................-------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

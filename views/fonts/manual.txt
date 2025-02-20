@@ -1,0 +1,10 @@
+Descargar la fuente, y instalarla manual
+
+se hace con la fuente y luego en css es con @font-face{
+    que indica que es una fuente mas alla de las por defectos, de la siguiente manera:
+
+    font-family: "lora";
+    src:url("aqui va la fuene que te pasaron o la que descargaste") format("truetype");
+    font-weight: 400;
+    font-style: normal,
+}

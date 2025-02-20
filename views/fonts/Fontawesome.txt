@@ -1,0 +1,15 @@
+es un conjunto de iconos robustos que contiene iconos vectoriales escalables .
+Y, sorprendentemente, es gratuito (los conjuntos de iconos pueden ser bastante caros,
+lo que lo convierte en una buena oferta). Hay muchos tipos importantes de iconos que
+vienen con Font Awesome: redes sociales, relacionados con la interfaz de usuario/web,
+¡y más!
+
+
+es un repositorio de iconos algunos de pago y otros gratuitos . Imágenes actualizadas
+y de calidad de marcas conocidas, emoticonos,… Fontawesome y otros repositorios de
+ iconos nos ayudan a ganar tiempo en la implementación de nuestro proyecto web.
+
+eestoy viendo que esto es como un taiwanld pero de iconos y se usa tambien por clases, 
+tambien hay funciones como js, svgs y asi
+
+en este caso usaremos el all.min porque pesa menos y es mas optimizada para el navegador

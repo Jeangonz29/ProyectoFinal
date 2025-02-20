@@ -1,0 +1,80 @@
+/*seleccionar el dom, o sea el * */
+
+* {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline; /*esto es para que los elementos esten alineados verticalmente
+    se utiliza para alinear elementos en relación con el eje vertical de su contenedor o en
+     relación con otros elementos de la misma línea. Esta propiedad es especialmente útil al 
+     trabajar con elementos en línea o en línea-bloque, como imágenes o texto.
+    Aquí tienes algunos valores comunes para vertical-align:
+    baseline: Alinea el elemento con la línea base de su contenedor (valor predeterminado).
+    sub: Alinea el elemento como un subíndice.
+    super: Alinea el elemento como un superíndice.
+    top: Alinea el elemento con la parte superior de la caja contenedora.
+    middle: Alinea el elemento en el medio de la caja contenedora.
+    bottom: Alinea el elemento con la parte inferior de la caja contenedora.*/
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /*esto que pondre es para la compatibilidad del box-sizing ya que no puede funcionar en algunos navegadores*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+/*::before: Inserta contenido antes del contenido real del elemento seleccionado. 
+El contenido insertado se define con la propiedad content.
+::after: Inserta contenido después del contenido real del elemento seleccionado.
+ Al igual que ::before, el contenido se define con la propiedad content.*/
+
+/* Can i use css (buscar en google)
+busco box sizing y me dice que es compatible con todos los navegadores menos con ie7 y anteriores
+*/
+
+html {
+    scroll-behavior: smooth; /*por si acaso*/
+}
+body{
+    min-height: 100vh; /*esto es para que el body tenga un minimo de altura del 100% de la pantalla*/
+    scroll-behavior: smooth; /*esto es para que el scroll sea suave por si algun movimiento de ancla la pag*/
+    text-rendering: optimizeSpeed; /*esto es para que la velocidad de renderizado del texto sea optima*/
+    line-height: 1.5; /*esto es para que el espacio entre lineas sea de 1.6*/
+}
+
+ul, ol {
+    list-style: none; /*esto es para quitar los puntos de las listas*/
+}
+a {
+    display: block; /*esto es para que las imagenes, videos, iframes, etc se muestren y yo pueda manipularlos como si fueran una caja*/
+    text-decoration: none; /*esto es para quitar el subrayado de los enlaces*/
+    color: inherit; 
+    font-family: inherit;
+    font-size: inherit;
+   
+}
+
+/*si tengo un parrafo y dentro de el tengo un enlace, el enlace se va a mostrar en linea y no se haga un salto*/
+p a {
+    display: inline; /*esto es para que los enlaces dentro de los parrafos se muestren en linea*/
+}
+
+
+
+img, video, iframe, picture, figure {
+    max-width: 100%; /*esto es para que las imagenes, videos, iframes, etc no se salgan de su contenedor*/
+    display: block; /*esto es para que las imagenes, videos, iframes, etc se muestren como bloques*/
+}
+
+/*a la hora de trabajar con*/
+
+form, input, textarea, button, select, label {
+    display: block; /*esto es para que los formularios, inputs, textareas, botones, etc se muestren como bloques*/
+    color: inherit; /*esto es para que los formularios, inputs, textareas, botones, etc tengan el color del texto*/
+    /* font: inherit; (Lo quito porque quizas solo necesito en family y size nada mas) /*esto es para que los formularios, inputs, textareas, botones, etc tengan la fuente del body*/
+    font-family: inherit; 
+    font-size: inherit;
+}

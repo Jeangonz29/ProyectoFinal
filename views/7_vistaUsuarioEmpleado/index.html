@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Cargar Fuentes -->
+    <link rel="stylesheet" href="../fonts/fontawesome-free-6.1.2-web/css/all.min.css">  <!--Iconos Biblioteca-->
+    <link rel="stylesheet" href="../fonts/dmsans/dmsans.css">  <!--Esto es para la fuente de letra que esta descargada y tuve que hacer un style con un @font-face Pero estoy usando una de google font que import-->
+
+    <!--Cargar Estilos-->
+    <link rel="stylesheet" href="../css/reset.css"> <!--Reset por defecto-->
+    <link rel="stylesheet" href="../css/BarraNavegacion.css">
+
+
+
+     <!--Cargar script-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Usuario</title>
+
+    <style>
+        /* Estilos personalizados para el scroll */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: rgba(4, 66, 45, 0.5);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    
+</head>
+<body >
+
+    <!--MENU Este no se activara hasta no activar el servidor----------------------------------------------------------------------------------------------->
+        <section id="NAVEGACION"></section>
+
+        <section id="HomeSesionPrincipal">
+
+    <!------Usuarios------------------------------------------------------------------------------------------->
+            <section class="mb-8">
+                <h2 class="text-4xl font-bold text-center p-10">Usuarios</h2>
+                <div class="seguimientoUsuario flex flex-col items-center space-y-4 h-auto w-2xs p-6">
+                    <div class="w-full md:w-3/4 bg-gray-100 py-6 border-8 overflow-x-auto custom-scrollbar">
+                        <h3 class="text-4xl font-bold p-10">Seguimiento Usuario</h3>
+                        <table class="min-w-full bg-white">
+                            <thead class="bg-gray-800 text-gray-600">
+                                <tr class="bg-blue-300 p-5">
+                                    <th class="py-4 px-10">fecha</th>
+                                    <th class="py-4 px-10">Hora de Entrada</th>
+                                    <th class="py-4 px-10">Hora de salida</th>
+                                    <th class="py-4 px-10">Nombre</th>
+                                    <th class="py-4 px-10">Cargo</th>
+                                    <th class="py-4 px-10">Cedula</th>
+                                    <th class="py-4 px-10">Correo</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-grey-400 text-center">
+                                <tr class="bg-white border-b">
+                                    <td class="py-2 px-4">2025-09-15</td>
+                                    <td class="py-2 px-4">8:00 am</td>
+                                    <td class="py-2 px-4">3:00 pm</td>
+                                    <td class="py-2 px-4">Stiven</td>
+                                    <td class="py-2 px-4">Recursos Humanos</td>
+                                    <td class="py-2 px-4">29098876</td>
+                                    <td class="py-2 px-4">1234@gmail.com</td>
+                                </tr>
+                        </table>
+                    </div>
+                
+                </div>
+            </section>
+       
+
+
+
+    <script type="module" src="../components/HomeSesionPrincipal.js"></script>
+   
+    <script type="module" src="../components/nav.js"></script>
+    <!--Para exportarlo se usa el type:"module"-->
+    
+</body>
+</html>
